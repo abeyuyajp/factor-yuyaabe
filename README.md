@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options      |
+| ------------------ | ------- | ------------ |
+| nickname           | string  | null: false  |
+| email              | string  | null: false  |
+| encrypted_password | string  | null: false  |
+| team               | string  | null: false  |
+| position           | string  | null: false  |
+| career             | text    |              |
+| birth_day          | date    |              |
+| play_position      | string  |              |
+| height             | integer |              |
+| weight             | integer |              |
+| text               | text    |              |
 
-* Ruby version
+### Association
+- has_many :posts
+- has_many :room_users
+- has_many :rooms, through: :room_users
+- has_many :messages
 
-* System dependencies
+## rooms テーブル
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| user               | references  | null: false, foreign_key: true  |
 
-* Configuration
+### Association
+- has_many :room_users
+- has_many :users, through: :room_users
+- has_many :messages
 
-* Database creation
+## room_users テーブル
 
-* Database initialization
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- belongs_to :room
 
-* Deployment instructions
 
-* ...
+## messagesテーブル
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| user               | references  | null: false, foreign_key: true  |
+| room               | references  | null: false, foreign_key: true  |
+| text               | text        | null: false                     |
+
+### Association
+- belongs_to :user
+- belongs_to :room
+
+
+## postsテーブル
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| user               | references  | null: false, foreign_key: true  |
+| title              | string      | null: false                     |
+| youtube_url        | string      | null: false                     |
+| text               | text        | null: false                     |
+
+### Association
+- belongs_to :user
