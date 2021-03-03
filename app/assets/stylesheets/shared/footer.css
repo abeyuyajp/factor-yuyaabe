@@ -1,0 +1,25 @@
+.footer{
+  width: 100%;
+  height: auto;
+  background-color: black;
+  text-align: center;
+}
+
+.footer-contents {
+  border-top: 1px solid hsla(0,0%,100%,.4);
+  font-size: 12px;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.footer-menu {
+  color: white;
+  text-decoration: none;
+  margin: 0 30px;
+}
