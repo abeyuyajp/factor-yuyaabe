@@ -1,0 +1,51 @@
+
+/* 投稿一覧 */
+
+.post-list {
+  background-color: black;
+  color: white;
+  padding: 10vh 30vh;
+  height: 100vh;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+
+.post-contents {
+  display: flex;
+  justify-content: space-around;
+}
+
+.post-content {
+  background-color: #1d1e21;
+  margin-right: 50px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.post-date {
+  color: hsla(0,0%,100%,.4);
+  font-size: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid hsla(0,0%,100%,.4)
+}
+
+.post-user {
+  padding-top: 10px;
+}
+
+
+
+.post-video {
+  width: 30vw;
+  height: 20vh;
+}
