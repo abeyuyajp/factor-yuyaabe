@@ -2,16 +2,16 @@
   background-color: black;
   height: 100%;
   padding: 80px 0;
-
+  color: white;
 }
 
-.form-area position {
-  color: white;
+.form-wrap {
+  padding: 0 20px;
 }
 
 .register-btn {
   width: 100%;
-  padding: 11px 16px;
+  padding: 10px 0;
   margin-bottom: 50px;
   background-color: #ff3651;
   border: 0;
@@ -24,10 +24,10 @@
   display: flex;
   align-items: center;
   color: white;
-  padding-left: 50px;
+  padding-left: 20px;
   padding-bottom: 50px;
 }
 
 .button-area #position {
-  margin-right: 100px;
+  margin-right: 80px;
 }
