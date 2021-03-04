@@ -14,10 +14,10 @@
       <%= render "shared/error_messages", model: f.object %>
 
       <div class="form-area">
-        <%= f.text_field :nickname, class: "input-area", id:"nickname", placeholder:"ユーザーネーム", maxlength:"40" %>
+        <%= f.text_field :nickname, class: "input-area", id:"nickname", placeholder:"ユーザーネーム", autofocus: true%>
       </div>
       <div class="form-area">
-        <%= f.email_field :email, class: "input-area", id:"email", placeholder:"メールアドレス", autofocus: true %>
+        <%= f.email_field :email, class: "input-area", id:"email", placeholder:"メールアドレス" %>
       </div>
       <div class="form-area">
         <%= f.password_field :password, class: "input-area", id:"password", placeholder:"パスワード" %>
