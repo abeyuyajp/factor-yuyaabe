@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string  :nickname,           null: false
       t.string  :team,               null: false
       t.string  :position,           null: false
-      t.text    :carrer
+      t.text    :career
 
 
       ## Recoverable
