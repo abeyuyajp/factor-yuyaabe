@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        team: 現所属チーム
+        position: ユーザータイプ
+        email: メールアドレス
