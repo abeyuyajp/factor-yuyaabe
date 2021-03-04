@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname, length: { maximum: 12 }
-    validates :password_confirmation, format: { with: /[a-z\d]{6,}/i }
+    validates :password_confirmation, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
     validates :team
     validates :position
   end
-    validates :password, format: { with: /[a-z\d]{6,}/i }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
 end
