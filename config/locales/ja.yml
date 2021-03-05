@@ -6,3 +6,7 @@ ja:
         team: 現所属チーム
         position: ユーザータイプ
         email: メールアドレス
+      post:
+        title: タイトル
+        youtube_url: 動画URL
+        text: テキスト
