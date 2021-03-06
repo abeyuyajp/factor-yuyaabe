@@ -1,34 +1,34 @@
 <%= render "shared/header" %>
 
-<div class="post-list">
-  <h2 class="title">投稿一覧</h2>
+<div class="main">
+  
   <div class="post-contents">
-    <div class="post-content">
-      <%= link_to image_tag("protostype-3.jpg", class:"post-video"), "/" %>
-      <div class="post-title">
-        阿部祐也プレー集①
-      </div>
-      <div class="post-date">
-        2021/3/3(Wed) 12:16
-      </div>
-      <div class="post-user">
-        阿部祐也
-      </div>
-    </div>
+    <h2 class="title">投稿一覧</h2>
+    <ul class="post-lists">
 
-    <div class="post-content">
-      <%= link_to image_tag("hero.jpg", class:"post-video"), "/" %>
-      <div class="post-title">
-      阿部祐也プレー集②
-      </div>
-      <div class="post-date">
-        2021/3/3(Wed) 12:16
-      </div>
-      <div class="post-user">
-        阿部祐也
-      </div>
-    </div>
+      <% @posts.each do |post| %>
+      <li class="list">
+        <%#= link_to post_path(post.id) do %>
+        <%# youtubeの動画を表示 %>
+        <div class="youtube_url">
+        <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <%# //youtubeの動画を表示%>
+        <div class="post-title">
+          <%= post.title %>
+        </div>
+        <div class="post-date">
+          <%= post.created_at %>
+        </div>
+        <div class="post-user">
+          <%= post.user.nickname %>
+        </div>
+      </li>
+      <% end %>
+
+    </ul>
   </div>
 </div>
 
 <%= render "shared/footer" %>
+
