@@ -26,6 +26,23 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    url = params[:post][:youtube_url]
+    url = url.last(11)
+    @post.youtube_url = url
+
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def post_params

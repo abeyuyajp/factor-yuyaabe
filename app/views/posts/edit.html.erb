@@ -1,0 +1,44 @@
+ <%# cssは新規投稿のものを使用
+ app/assets/stylesheets/posts/new.css %>
+ 
+ <%= render "shared/header" %>
+
+<div class="post-contents">
+  <div class="post-main">
+    <h2 class="post-main-title">活躍している姿を発信しよう！</h2>
+    <%= form_with model: @post,local: true do |f| %>
+
+    <%# エラーメッセージを表示 %>
+    <%= render "shared/error_messages", model: f.object %>
+    <%# //エラーメッセージを表示 %>
+
+    <%# 投稿フォーム %>
+    <div class="new-posts">
+      <div class="new-posts-title">
+        タイトル
+      </div>
+      <%= f.text_field :title, class:"post-text", id:"post-title", placeholder:"タイトルを入力" %>
+      <div class="new-posts-title">
+        動画URL
+      </div>
+      <%= f.text_field :youtube_url, class:"post-text", id:"video-url", placeholder:"YouTubeのURLを貼り付けてください" %>
+      <div class="new-posts-title">
+        アピールポイント、説明等
+      </div>
+      <%= f.text_area :text, class:"post-text", id:"post-explain", placeholder:"テキストを入力" %>
+    </div>
+    <%# //投稿フォーム %>
+
+    <%# 送信ボタン %>
+    <div class="actions">
+      <%= f.submit "投稿する", class:"submit-btn" %>
+      <%= link_to "もどる", root_path, class:"back-btn" %>
+    </div>
+    <%# //送信ボタン %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
+
+
