@@ -8,10 +8,10 @@
 
       <% @posts.each do |post| %>
       <li class="list">
-        <%#= link_to post_path(post.id) do %>
+        <%= link_to post_path(post.id) do %>
         <%# youtubeの動画を表示 %>
         <div class="youtube_url">
-        <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <%# //youtubeの動画を表示%>
         <div class="post-title">
@@ -20,6 +20,7 @@
         <div class="post-date">
           <%= post.created_at %>
         </div>
+        <% end %>
         <div class="post-user">
           <%= post.user.nickname %>
         </div>

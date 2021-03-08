@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<%# 投稿の詳細 %>
+<div class="post-show">
+  <div class="post-area">
+    <h2 class="title">
+      <%= @post.title %>
+    </h2>
+    <div class="video-content">
+      <iframe class="video" src="https://www.youtube.com/embed/<%= @post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="post-text">
+      <%= @post.text %>
+    </div>
+<%# 投稿の詳細 %>
+
+<%# ユーザー情報の詳細 %>
+    <div class="user-data">
+      <h2 class="user-title">選手情報</h2>
+      <table class="user-table">
+        <tbody>
+          <tr>
+            <th class="user-header">名前</th>
+            <td class="user-data"><%= @post.user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="user-header">所属チーム</th>
+            <td class="user-data"><%= @post.user.team %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   
+<%# ユーザー情報の詳細 %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
