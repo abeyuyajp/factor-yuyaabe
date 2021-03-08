@@ -1,0 +1,39 @@
+.post-show {
+  background-color: black;
+  color: white;
+  width: 100vw;
+  padding: 10vh 15vw;
+}
+
+.post-area {
+  padding: 5vh 15vw;
+  background-color: #1d1e21;
+  border-radius: 20px;
+  margin-bottom: 30vh;
+}
+
+.video {
+  margin-bottom: 5vh;
+}
+
+.post-text {
+  margin-bottom: 5vh;
+}
+
+.user-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.user-table {
+  margin: 0 auto;
+  line-height: 5vh;
+}
+
+.user-header {
+  padding-right: 10vw;
+  font-weight: bold;
+}
+

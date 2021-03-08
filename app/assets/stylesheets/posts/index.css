@@ -20,6 +20,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100vw;
+  list-style: none;
 }
 
 .list {
@@ -40,6 +41,7 @@
   font-size: 20px;
   font-weight: bold;
   padding-top: 15px;
+  color: white;
 }
 
 .post-date {
