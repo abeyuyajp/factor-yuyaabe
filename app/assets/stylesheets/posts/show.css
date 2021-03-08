@@ -38,15 +38,25 @@
   font-weight: bold;
 }
 
-.edit-btn {
+.action-btn {
   width: 100%;
   display: flex;
 }
 
-.action-btn {
+.edit-btn {
   margin: 0 auto;
   padding: 11px 25px;
   background-color: #ff3651;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.delete-btn {
+  margin: 0 auto;
+  padding: 11px 25px;
+  background-color: #aaa;
   border-radius: 12px;
   color: white;
   font-weight: bold;

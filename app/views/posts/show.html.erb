@@ -31,10 +31,10 @@
       </table>
     </div>
 <%# //ユーザー情報の詳細 %>
-    <div class="edit-btn">
-    <% if current_user.id == @post.user_id %>
-      <%= link_to "編集する", edit_post_path(@post.id), method: :get, class: "action-btn" %>
-      <%#= link_to "削除",  %>
+    <div class="action-btn">
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= link_to "編集する", edit_post_path(@post.id), method: :get, class: "edit-btn" %>
+      <%= link_to "削除する", post_path(@post.id), method: :delete, class: "delete-btn" %>
     <% end %>
     </div>
   </div>
