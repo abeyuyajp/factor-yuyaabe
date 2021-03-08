@@ -12,7 +12,7 @@
     <div class="post-text">
       <%= @post.text %>
     </div>
-<%# 投稿の詳細 %>
+<%# //投稿の詳細 %>
 
 <%# ユーザー情報の詳細 %>
     <div class="user-data">
@@ -30,8 +30,11 @@
         </tbody>
       </table>
     </div>
-   
-<%# ユーザー情報の詳細 %>
+<%# //ユーザー情報の詳細 %>
+    <% if current_user.id == @post.user_id %>
+      <%= link_to "編集する", edit_post_path(@post.id), method: :get, class: "edit-btn" %>
+      <%#= link_to "削除",  %>
+    <% end %>
   </div>
 </div>
 
