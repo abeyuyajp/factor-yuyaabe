@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :youtube_post, only: [:create, :update]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -12,10 +13,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    url = params[:post][:youtube_url]
-    url = url.last(11)
-    @post.youtube_url = url
-
     if @post.save
       redirect_to root_path
     else
@@ -30,10 +27,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    url = params[:post][:youtube_url]
-    url = url.last(11)
-    @post.youtube_url = url
-
     if @post.update(post_params)
       redirect_to root_path
     else
@@ -54,5 +47,11 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def youtube_post
+    url = params[:post][:youtube_url]
+    url = url.last(11)
+    @post.youtube_url = url
   end
 end
