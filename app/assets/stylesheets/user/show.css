@@ -1,0 +1,36 @@
+
+.user-info {
+  background-color: black;
+  height: 100%;
+}
+
+/*ユーザーの投稿一覧*/
+.contents {
+  color: white;
+}
+
+.contents-title {
+  padding-top: 20vh;
+  padding-left: 18vw;
+  font-weight: bold;
+  font-size: 30px ;
+}
+
+.post-content {
+  width: 50vh;
+  background-color: #1d1e21;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 5vh auto;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 15px;
+  color: white;
+}
+
+.contents a{
+  text-decoration: none;
+}

@@ -44,6 +44,10 @@
   color: white;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .post-date {
   color: hsla(0,0%,100%,.4);
   font-size: 12px;
