@@ -43,21 +43,60 @@
   margin-right: 20vw;
 }
 
+/* ナビゲーションバー*/
 
-
-.nav {
+.menu {
   font-size: 15px;
   display: flex;
   justify-content: space-between;
 }
 
-.lists {
-  display: flex;
-  list-style: none;
-  align-items: center;
+.user_nav {
+  position: relative;
+  top: 5px;
 }
 
-.lists span {
+.user_nav span {
+  color: white;
+  display: block;
+  float: left;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.user_nav span:after {
+  content: '▼';
+  font-size: .7em;
+  margin-left: -4px;
+}
+
+.user_nav span:hover ul {
+  color: #57C3E9;
+  display: block;
+}
+
+.user_nav ul{
+  display: none;
+  position: absolute;
+  width: 180px;
+  background-color: #1d1e21;
+  padding-left: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.user_nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+}
+
+
+.user_info span {
   color: white;
   margin: 0 10px;
 }
@@ -68,16 +107,6 @@
 }
 
 .sign-up {
-  text-decoration: none;
-  color: white;
-}
-
-.logout {
-  text-decoration: none;
-  color: white
-}
-
-.user-nickname {
   text-decoration: none;
   color: white;
 }
