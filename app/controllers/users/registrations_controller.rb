@@ -38,7 +38,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  #protected
+  protected
+
+  # ユーザー情報更新後のパス
+  def after_update_path_for(resouce)
+    user_path(current_user)
+  end
   
 
   # If you have extra params to permit, append them to the sanitizer.
