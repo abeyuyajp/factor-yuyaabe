@@ -27,9 +27,11 @@
   </div>
   <%#//ユーザー情報の詳細 %>
 
-<% if user_signed_in? && current_user.id == @user.id  %>
-<%= link_to "編集", edit_user_registration_path %>
-<% end %>
+  <div class="edit-user-btn">
+    <% if user_signed_in? && current_user.id == @user.id  %>
+      <%= link_to "編集する", edit_user_registration_path %>
+    <% end %>
+  </div>
 
 <%# ログインユーザーの投稿一覧 %>
   <div class="contents">
@@ -37,7 +39,7 @@
     <% @posts.each do |post| %>
       <%= link_to post_path(post.id) do %>
       <div class="post-content">
-        <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <P class="post-title"><%= post.title %></p>
       </div>
       <% end %>  

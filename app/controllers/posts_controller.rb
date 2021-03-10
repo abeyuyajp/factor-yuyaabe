@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :youtube_post, only: [:create, :update]
+  before_action :youtube_post, only: :update
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -13,6 +13,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # beforeアクションでまとめるとエラーになるため記述
+    url = params[:post][:youtube_url]
+    url = url.last(11)
+    @post.youtube_url = url
+    # //beforeアクションでまとめるとエラーになるため記述
     if @post.save
       redirect_to root_path
     else
