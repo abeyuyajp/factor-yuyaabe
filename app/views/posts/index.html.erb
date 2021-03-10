@@ -22,7 +22,7 @@
           <%= post.created_at %>
         </div>
         <div class="post-user">
-          <%= post.user.nickname %>
+          <%=link_to post.user.nickname, user_path(post.user.id) %>
         </div>
       </li>
       <% end %>

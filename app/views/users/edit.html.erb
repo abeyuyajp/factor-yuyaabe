@@ -1,0 +1,38 @@
+<div class="user-edit">
+  <div class="edit-contents">
+    <%= form_with model: @user, class:"edit-main", local: true do |f| %>
+
+    <div class="form-wrap">
+      <div class="form-header">
+        <h1 class="form-title">
+          ユーザー情報編集
+        </h1>
+      </div>
+
+      <%= render "shared/error_messages", model: f.object %>
+
+      <div class="form-area">
+        ユーザー名
+        <%= f.text_field :nickname, class: "input-area", id:"nickname", placeholder:"ユーザーネーム", autofocus: true%>
+      </div>
+      <div class="form-area">
+        メールアドレス
+        <%= f.email_field :email, class: "input-area", id:"email", placeholder:"メールアドレス" %>
+      </div>
+      <div class="form-area">
+        現所属チーム
+        <%= f.text_field :team, class: "input-area", id:"team", placeholder:"現所属チーム" %>
+      </div>
+      <div class="form-area">
+        パスワード
+        <%= f.text_field :team, class: "input-area", id:"team", placeholder:"現所属チーム" %>
+      </div>
+
+       <div class="actions">
+        <%= f.submit "更新する", class:"register-btn" %>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+</div>

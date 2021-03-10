@@ -1,0 +1,51 @@
+<%= render 'shared/header' %>
+
+<div class="user-info">
+  <%# ユーザー情報の詳細 %>
+  <div class="user-data">
+    <p class="contents-title"><%= @nickname %>さんの情報</p>
+    <%# cssは投稿詳細ページのものを使用
+    app/assets/stylesheets/posts/show.css %>
+    <table class="user-table">
+      <tbody>
+        <tr>
+          <th class="user-header">名前</th>
+          <td class="user-content"><%= @user.nickname %></td>
+        </tr>
+         <tr>
+          <th class="user-header">所属チーム</th>
+          <td class="user-content"><%= @user.team %></td>
+        </tr>
+         <tr>
+          <th class="user-header">経歴</th>
+          <td class="user-content"><%= @user.career %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%#// cssは投稿詳細ページのものを使用
+    app/assets/stylesheets/posts/show.css %>
+  </div>
+  <%#//ユーザー情報の詳細 %>
+
+<% if user_signed_in? && current_user.id == @user.id  %>
+<%= link_to "編集", edit_user_registration_path %>
+<% end %>
+
+<%# ログインユーザーの投稿一覧 %>
+  <div class="contents">
+    <p class="contents-title"><%= @nickname %>さんの投稿</p>
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post.id) do %>
+      <div class="post-content">
+        <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <P class="post-title"><%= post.title %></p>
+      </div>
+      <% end %>  
+    <% end %>
+  </div>
+<%# //ログインしているユーザーがplayerだったら表示するように条件分岐 %>
+<%# //ログインユーザーの投稿一覧 %>
+
+</div>
+
+<%= render 'shared/footer' %>
