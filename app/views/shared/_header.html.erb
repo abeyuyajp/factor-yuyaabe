@@ -7,20 +7,25 @@
       </button>
     </form>
     <%= link_to image_tag("header-logo.png", class:"factor-icon"), "/" %>
-    <div class="nav">
-      <ul class="lists">
+    <div class="menu">
         <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-        <span>/</span>
-        <li><%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class:"logout" %></li>
-        <span>/</span>
-        <li><%= link_to "投稿する", new_post_path, class: "post-btn" %></li>
+          <div class="user_nav">
+            <span><%= current_user.nickname %>
+              <ul class="user_info">
+                <li>
+                  <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                  <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </span>
+          <%= link_to "投稿する", new_post_path, class: "post-btn" %></li>
+          </div>
         <% else %>
-        <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
-        <span>/</span>
-        <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up"  %></li>
+          <%= link_to "ログイン", new_user_session_path, class: "login" %>
+          <span>/</span>
+          <%= link_to "新規登録", new_user_registration_path, class: "sign-up"  %>
         <% end %>
-      </ul>
+      
     </div>
   </div>
 </header>

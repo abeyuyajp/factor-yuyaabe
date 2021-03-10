@@ -11,7 +11,7 @@
         <%= link_to post_path(post.id) do %>
         <%# youtubeの動画を表示 %>
         <div class="youtube_url">
-          <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <%# //youtubeの動画を表示%>
         <div class="post-title">
@@ -22,7 +22,7 @@
           <%= post.created_at %>
         </div>
         <div class="post-user">
-          <%= post.user.nickname %>
+          <%=link_to post.user.nickname, user_path(post.user.id) %>
         </div>
       </li>
       <% end %>

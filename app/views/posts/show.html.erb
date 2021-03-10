@@ -7,7 +7,7 @@
       <%= @post.title %>
     </h2>
     <div class="video-content">
-      <iframe class="video" src="https://www.youtube.com/embed/<%= @post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="video" src="https://www.youtube.com/embed/<%= @post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="post-text">
       <%= @post.text %>
@@ -21,11 +21,11 @@
         <tbody>
           <tr>
             <th class="user-header">名前</th>
-            <td class="user-data"><%= @post.user.nickname %></td>
+            <td class="user-content"><%= @post.user.nickname %></td>
           </tr>
           <tr>
             <th class="user-header">所属チーム</th>
-            <td class="user-data"><%= @post.user.team %></td>
+            <td class="user-content"><%= @post.user.team %></td>
           </tr>
         </tbody>
       </table>
