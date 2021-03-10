@@ -87,7 +87,7 @@
   color: white;
 }
 
-.user_nav ul li a {
+.user_nav li a {
   display: block;
   padding: 10px 20px;
   text-align: left;
