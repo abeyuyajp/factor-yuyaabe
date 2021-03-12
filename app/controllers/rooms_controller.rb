@@ -20,6 +20,6 @@ class RoomsController < ApplicationController
   private
 
   def join_room_params
-    params.require(:RoomUser).permit(:user_id, :room_id).merge(room_id: @room.id)
+    params.require(:room_user).permit(:user_id, :room_id).merge(room_id: @room.id)
   end
 end
