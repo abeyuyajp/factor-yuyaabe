@@ -1,0 +1,13 @@
+<div class="chat-room">
+  <h1>メッセージ</h1>
+  <% @RoomUsers.each do |r| %> 
+  <div class="user-name">
+  <strong>
+      <a class="rooms-user-link" href="/users/<%= r.user.id %>">
+        <%= r.user.name %>さん
+      </a>
+  </strong>
+  </div>
+
+  <% end %>
+</div>

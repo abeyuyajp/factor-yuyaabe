@@ -33,6 +33,23 @@
     <% end %>
   </div>
 
+  <%# メッセージルームに遷移するボタン %>
+    <% unless @user.id == current_user.id %>
+    <% if @haveRoom == true %>
+      <%= link_to "ダイレクトメッセージ", room_path %>
+    <% else %>
+      <%= form_with model: @room, local: true do |f|%>
+        <%= fields_for @RoomUser do |r| %>
+          <%= r.hidden_field :user_id, value: @user.id %>
+        <% end %>
+        <%= f.submit "チャットを始める" %>
+      <% end %>
+    <% end %>
+    <% end %>
+  
+
+  <%#//メッセージルームに遷移するボタン %>
+
 <%# ログインユーザーの投稿一覧 %>
   <div class="contents">
     <p class="contents-title"><%= @nickname %>さんの投稿</p>
