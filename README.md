@@ -25,7 +25,7 @@
 ## rooms テーブル
 | Column             | Type        | Options                         |
 | ------------------ | ----------- | ------------------------------- |
-| user               | references  | null: false, foreign_key: true  |
+| user               | references  |  foreign_key: true            |
 
 ### Association
 - has_many :room_users
@@ -36,8 +36,8 @@
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| user   | references |  foreign_key: true             |
+| room   | references |  foreign_key: true             |
 
 ### Association
 

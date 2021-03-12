@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_many :room_users
+  has_many :rooms, through: :room_users
 
   with_options presence: true do
     validates :nickname, length: { maximum: 12 }
