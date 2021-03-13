@@ -23,9 +23,9 @@
 - has_many :messages
 
 ## rooms テーブル
-| Column             | Type        | Options                         |
-| ------------------ | ----------- | ------------------------------- |
-| user               | references  |  foreign_key: true            |
+| Column             | Type        | Options                        |
+| ------------------ | ----------- | -------------------------------|
+|                    |             |                                |
 
 ### Association
 - has_many :room_users
