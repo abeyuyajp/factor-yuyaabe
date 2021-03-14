@@ -9,6 +9,7 @@
     <%= link_to image_tag("header-logo.png", class:"factor-icon"), "/" %>
     <div class="menu">
         <% if user_signed_in? %>
+        <%= image_tag current_user.image.variant(resize: '150x150'), class: 'user-image' if current_user.image.attached? %>
           <div class="user_nav">
             <span><%= current_user.nickname %>
               <ul class="user_info">

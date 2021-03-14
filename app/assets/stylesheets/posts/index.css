@@ -57,12 +57,21 @@
 
 .post-user {
   padding-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .post-user a{
   color: white;
 }
 
+.user-image {
+  border-radius: 100px;
+  object-fit: cover;
+  width:  30px;
+  height: 30px;
+  margin-right: 5px;
+}
 
 .post-video {
   width: 30vw;

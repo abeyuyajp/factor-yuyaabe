@@ -3,7 +3,6 @@
 <div class="user-info">
   <%# ユーザー情報の詳細 %>
   <div class="user-data">
-    <%= image_tag @user.image.variant(resize: '200x200'), class: 'user-image' if @user.image.attached? %>
     <p class="contents-title"><%= @nickname %>さんの情報</p>
     <%# cssは投稿詳細ページのものを使用
     app/assets/stylesheets/posts/show.css %>
