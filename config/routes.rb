@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts
   resources :users, only: :show
-  resources :rooms, only: [:index, :create, :show] 
+  resources :rooms, only: [:create, :show] 
   resources :messages, only: :create
 end
