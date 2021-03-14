@@ -1,9 +1,22 @@
-
+/*ユーザーの詳細情報*/
 .user-info {
   background-color: black;
   height: 100%;
   color: white;
 }
+/*//ユーザーの詳細情報*/
+
+/*メッセージボタン*/
+.chat-btn {
+  color: white;
+  background-color: #ff3651;
+  border-radius: 12px;
+  border: none;
+  padding: 11px 16px;
+  margin-left: 20vw;
+  text-decoration: none;
+}
+/*//メッセージボタン*/
 
 /*編集ページに遷移するボタン*/
   .edit-user-btn {

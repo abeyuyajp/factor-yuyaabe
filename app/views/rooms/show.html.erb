@@ -1,12 +1,11 @@
+<%= render "shared/header" %>
+
 <div class="chat-room">
-  <h1>メッセージ</h1>
-  <% @RoomUsers.each do |r| %> 
+  <% @RoomUsers.where.not(user_id: current_user.id).each do |r| %> 
   <div class="user-name">
-  <strong>
-      <a class="rooms-user-link" href="/users/<%= r.user.id %>">
-        <%= r.user.nickname %>さん
-      </a>
-  </strong>
+    <strong>
+      <%= link_to r.user.nickname, user_path(r.user.id) %>
+    </strong>
   </div>
   <% end %>
   <hr>
@@ -15,9 +14,12 @@
       <% if @messages.present? %>
         <% @messages.each do |m| %>
           <div class="chat-box">
-            <div class="chat-text">
+            <div class="upper-chat">
+              <%= link_to m.user.nickname, user_path(m.user.id), class:"chat-name" %>
+              <p class="chat-time"><%= m.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+            </div>
+            <div class="lower-chat">
               <%= m.text %>
-              <%= m.created_at.strftime("%Y-%m-%d %H:%M") %>
             </div>
           </div>
         <% end %>
@@ -27,10 +29,11 @@
     </div>
     <div class="posts">
       <%= form_with model: @message, local: true do |f| %>
-        <%= f.text_field :text, placeholder: "メッセージを入力してください" %>
+        <%= f.text_field :text, placeholder: "メッセージを入力", class: "message-area" %>
         <%= f.hidden_field :room_id, value: @room.id %>
-        <%= f.submit "送信する" %>
+        <%= f.submit "送信", class: "posts-btn" %>
       <% end %>
     </div>
   </div>
 </div>
+

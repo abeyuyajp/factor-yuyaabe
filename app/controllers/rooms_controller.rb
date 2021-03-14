@@ -1,6 +1,10 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    
+  end
+
   def create
     @room = Room.create
     @joinCurrentUser = RoomUser.create(user_id: current_user.id, room_id: @room.id)
