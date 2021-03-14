@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :messages
+  has_one_attached :image
 
   with_options presence: true do
     validates :nickname, length: { maximum: 12 }
