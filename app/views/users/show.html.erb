@@ -32,22 +32,21 @@
       <%= link_to "編集する", edit_user_registration_path %>
     <% end %>
   </div>
+  
 
   <%# メッセージルームに遷移するボタン %>
     <% unless @user.id == current_user.id %>
     <% if @haveRoom == true %>
-      <%= link_to "ダイレクトメッセージ", room_path %>
+      <%= link_to "メッセージを送る", room_path(@roomId) ,class: "chat-btn"%>
     <% else %>
       <%= form_with model: @room, local: true do |f|%>
         <%= fields_for @RoomUser do |r| %>
           <%= r.hidden_field :user_id, value: @user.id %>
         <% end %>
-        <%= f.submit "チャットを始める" %>
+        <%= f.submit "チャットを始める", class: "chat-btn" %>
       <% end %>
     <% end %>
     <% end %>
-  
-
   <%#//メッセージルームに遷移するボタン %>
 
 <%# ログインユーザーの投稿一覧 %>

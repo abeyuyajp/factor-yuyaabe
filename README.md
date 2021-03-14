@@ -23,9 +23,9 @@
 - has_many :messages
 
 ## rooms テーブル
-| Column             | Type        | Options                         |
-| ------------------ | ----------- | ------------------------------- |
-| user               | references  |  foreign_key: true            |
+| Column             | Type        | Options                        |
+| ------------------ | ----------- | -------------------------------|
+|                    |             |                                |
 
 ### Association
 - has_many :room_users
@@ -48,8 +48,8 @@
 ## messagesテーブル
 | Column             | Type        | Options                         |
 | ------------------ | ----------- | ------------------------------- |
-| user               | references  | null: false, foreign_key: true  |
-| room               | references  | null: false, foreign_key: true  |
+| user               | references  | foreign_key: true              |
+| room               | references  | foreign_key: true              |
 | text               | text        | null: false                     |
 
 ### Association

@@ -10,3 +10,8 @@ ja:
         title: タイトル
         youtube_url: 動画URL
         text: テキスト
+
+
+      time:
+        formats:
+          default: "%Y/%m/%d %H:%M:%S"

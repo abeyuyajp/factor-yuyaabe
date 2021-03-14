@@ -1,0 +1,65 @@
+
+.chat-room {
+  background-color: black;
+  height: 100vh;
+  color: white;
+  overflow: scroll;
+  margin: 0 auto;
+}
+
+.user-name {
+  padding: 2vh 5vw;
+}
+
+.user-name a{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.chats {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.chat-box {
+  margin: 8vh 0;
+}
+
+.upper-chat {
+  display: flex;
+  align-items: center;
+}
+
+.chat-name {
+  color: white;
+  margin-right: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.chat-time {
+  font-size: 12px;
+  color: hsla(0,0%,100%,.4);
+}
+
+.posts {
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.message-area {
+  padding: 8px 20vw 8px 5px;
+  border-radius: 20px;
+  border: none;
+}
+
+.posts-btn {
+  color: white;
+  background-color:#ff3651;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 0;
+}

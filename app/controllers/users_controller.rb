@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @nickname = @user.nickname
     @posts = @user.posts
+
     # ダイレクトメッセージの記述
-    
       @currentRoomUser = RoomUser.where(user_id: current_user.id) #current_userがすでにルームに参加しているか判断
       @receiveUser = RoomUser.where(user_id: @user.id) #@userがルームに参加しているか判断
       unless @user.id == current_user.id  #current_userとユーザーが同一人物でなければ
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
           @RoomUser = RoomUser.new
         end
       end
-    
     # //ダイレクトメッセージの記述
   end
 
