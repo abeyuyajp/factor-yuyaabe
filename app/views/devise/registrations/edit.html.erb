@@ -1,64 +1,50 @@
-%> <br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+<%= render "shared/header" %>
 
-  <div class="actions">
-    <%= f.submit "Update" %><h2>ユーザー情報編集</h2>
+<div class="edit-main">
+  <div class="edit-form">
+    <h1 class="user-nickname">Hello  <%= current_user.nickname %>!!</h1>
+    <div class="view-image">
+      <% if current_user.image.attached? %>
+        <%= image_tag current_user.image.variant(resize: '150x150'), class:"user-edit-icon" %>
+      <% else %>
+        <%= image_tag("user-image.png", class:"user-edit-icon") %>
+      <% end %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="form-input">
-    <span class="image-file">画像</span>
-    <%= f.file_field :image, class: "input-area" %>
-  </div>
+      <div class="form-input">
+        <%= f.file_field :image %>
+      </div>
 
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true %>
-  </div>
+      <div class="field">
+        <%= f.label :nickname %><br />
+        <%= f.text_field :nickname, class:"edit-area", autofocus: true %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class:"edit-area", autocomplete: "email" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :team %><br />
-    <%= f.text_field :team %>
-  </div>
+      <div class="field">
+        <%= f.label :team %><br />
+        <%= f.text_field :team, class: "edit-area" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :career %><br />
-    <%= f.text_area :career %>
-  </div>
+      <div class="field">
+        <%= f.label :"経歴" %><br />
+        <%= f.text_area :career, class: "edit-career" %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  
+      <div class="actions">
+        <%= f.submit "保存", class: "update-btn" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :"新しいパスワード" %> <br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+       <%= link_to "もどる", :back, class: "update-back-btn" %>
     <% end %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :"新しいパスワード(確認用)" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password 
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
+</div>
