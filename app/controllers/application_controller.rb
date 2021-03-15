@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
     # 新規登録時
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :team, :position])
     # 情報更新時
-    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :team, :position, :career])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :image, :team, :position, :career])
   end
 end
