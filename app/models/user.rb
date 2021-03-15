@@ -12,9 +12,12 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname, length: { maximum: 12 }
-    validates :password_confirmation, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     validates :team
     validates :position
   end
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
+  with_options format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "半角英数字にしてください", on: :create } do
+    validates :password
+    validates :password_confirmation
+  end
 end
