@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    # 新規登録時
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :team, :position])
   end
 end

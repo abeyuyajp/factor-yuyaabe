@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :youtube_post, only: :update
+  before_action :set_q, only: [:index, :search]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -44,6 +45,10 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @results = @q.result.includes(:user)
+  end
+
   private
 
   def post_params
@@ -58,5 +63,9 @@ class PostsController < ApplicationController
     url = params[:post][:youtube_url]
     url = url.last(11)
     @post.youtube_url = url
+  end
+
+  def set_q
+    @q = Post.ransack(params[:q])
   end
 end

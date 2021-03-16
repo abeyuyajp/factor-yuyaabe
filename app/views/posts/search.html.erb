@@ -1,0 +1,51 @@
+
+<%# cssは投稿一覧ページのものを使用
+ app/assets/stylesheets/posts/index.css %>
+
+<%= render "shared/header" %>
+
+<div class="search-main">
+  <%= search_form_for @q, url: search_posts_path do |f| %>
+    <div class="search">
+      <%= f.text_field :title_or_text_cont, class: "search-form", placeholder: "キーワード検索" %>
+      <%= f.submit "検索", class: "search-btn"%>
+    </div>
+  <% end %>
+  <div class="post-contents">
+    <% if @results.length != 0 %>
+      <ul class="post-lists">
+        <% @results.each do |result| %>
+          <li class="list">
+            <%= link_to post_path(result.id) do %>
+              <div class="youtube_url">
+                <iframe class="video" src="https://www.youtube.com/embed/<%= result.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="post-title">
+                <%= result.title %>
+              </div>
+            <% end %>
+            <div class="post-date">
+              <%= result.created_at.strftime("%Y-%m-%d %H:%M") %>
+            </div>
+            <div class="post-user">
+              <% if result.user.image.attached? %>
+                <%= image_tag result.user.image.variant(resize: '150x150'), class: "user-image" %>
+              <% else %>
+                <%= image_tag("user-image.png", class:"user-noicon") %>
+              <% end %>
+              <%= link_to result.user.nickname, user_path(result.user.id) %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <div class="result-empty">
+        <h1 class="result-empty-title">検索結果がありません</h1>
+        <p class="result-empty-message">検索結果がありませんでした。<br>
+        入力を間違えていないか確認してください。
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
