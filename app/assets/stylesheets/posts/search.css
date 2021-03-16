@@ -1,0 +1,24 @@
+.search-main {
+  background-color: black;
+  height: 100%;
+}
+
+.post-contents {
+  height: 100vh;
+}
+
+.result-empty {
+  padding-top: 12vh;
+}
+
+.result-empty-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+
+.result-empty-message {
+  text-align: center;
+  color: hsla(0,0%,100%,.4);
+}

@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @results = @q.result.includes(:user)
   end
 
   private
