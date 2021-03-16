@@ -2,8 +2,10 @@
 
 <div class="main">
   <%= search_form_for @q, url: search_posts_path do |f| %>
-    <%= f.text_field :title_or_text_cont, class: "search-area", placeholder: "キーワード検索" %>
-    <%= f.submit "検索", class: "search-btn"%>
+    <div class="search">
+      <%= f.text_field :title_or_text_cont, class: "search-form", placeholder: "キーワード検索" %>
+      <%= f.submit "検索", class: "search-btn"%>
+    </div>
   <% end %>
   
   <div class="post-contents">

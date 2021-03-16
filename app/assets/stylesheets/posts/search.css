@@ -1,14 +1,16 @@
 .search-main {
   background-color: black;
   height: 100%;
+  width: 100%;
 }
 
-.post-contents {
-  height: 100vh;
+.search-contents {
+  height: 100%;
 }
 
 .result-empty {
   padding-top: 12vh;
+  margin-bottom: 100%;
 }
 
 .result-empty-title {
