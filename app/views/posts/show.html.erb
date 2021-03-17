@@ -1,20 +1,21 @@
 <%= render "shared/header" %>
 
-<%# 投稿の詳細 %>
-<div class="post-show">
-  <div class="post-area">
-    <h2 class="title">
+<div class="show-post">
+
+  <%# 投稿の詳細 %>
+  <div class="show-area">
+    <h2 class="show-post-title">
       <%= @post.title %>
     </h2>
-    <div class="video-content">
+    <div class="show-video-content">
       <iframe class="video" src="https://www.youtube.com/embed/<%= @post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="post-text">
+    <div class="show-post-text">
       <%= @post.text %>
     </div>
-<%# //投稿の詳細 %>
+    <%# //投稿の詳細 %>
 
-<%# ユーザー情報の詳細 %>
+    <%# ユーザー情報の詳細 %>
     <div class="user-data">
       <h2 class="user-title">選手情報</h2>
       <table class="user-table">
@@ -30,7 +31,7 @@
         </tbody>
       </table>
     </div>
-<%# //ユーザー情報の詳細 %>
+    <%# //ユーザー情報の詳細 %>
     <div class="action-btn">
     <% if user_signed_in? %>
       <% if current_user.id == @post.user_id %>
@@ -40,6 +41,7 @@
     <% end %>
     </div>
   </div>
+
 </div>
 
 <%= render "shared/footer" %>
