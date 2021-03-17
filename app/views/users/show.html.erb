@@ -1,29 +1,25 @@
 <%= render 'shared/header' %>
 
-<div class="user-info">
+<div class="user-show-info">
   <%# ユーザー情報の詳細 %>
-  <div class="user-data">
-    <p class="contents-title"><%= @nickname %>さんの情報</p>
-    <%# cssは投稿詳細ページのものを使用
-    app/assets/stylesheets/posts/show.css %>
-    <table class="user-table">
+  <div class="user-show-data">
+    <p class="user-show-title"><%= @nickname %>さんの情報</p>
+    <table class="user-show-table">
       <tbody>
         <tr>
-          <th class="user-header">名前</th>
-          <td class="user-content"><%= @user.nickname %></td>
+          <th class="user-show-header">名前</th>
+          <td class="user-show-calumn"><%= @user.nickname %></td>
         </tr>
-         <tr>
-          <th class="user-header">所属チーム</th>
-          <td class="user-content"><%= @user.team %></td>
+        <tr>
+          <th class="user-show-header">所属チーム</th>
+          <td class="user-show-calumn"><%= @user.team %></td>
         </tr>
-         <tr>
-          <th class="user-header">経歴</th>
-          <td class="user-content"><%= @user.career %></td>
+        <tr>
+          <th class="user-show-header">経歴</th>
+          <td class="user-show-calumn"><%= @user.career %></td>
         </tr>
       </tbody>
     </table>
-    <%#// cssは投稿詳細ページのものを使用
-    app/assets/stylesheets/posts/show.css %>
   </div>
   <%#//ユーザー情報の詳細 %>
 
@@ -35,35 +31,56 @@
   
 
   <%# メッセージルームに遷移するボタン %>
+  <div class="show-chat-btn">
     <% unless @user.id == current_user.id %>
-    <% if @haveRoom == true %>
-      <%= link_to "メッセージを送る", room_path(@roomId) ,class: "chat-btn"%>
-    <% else %>
-      <%= form_with model: @room, local: true do |f|%>
-        <%= fields_for @RoomUser do |r| %>
-          <%= r.hidden_field :user_id, value: @user.id %>
+      <% if @haveRoom == true %>
+        <%= link_to "メッセージを送る", room_path(@roomId) ,class: "chat-btn"%>
+      <% else %>
+        <%= form_with model: @room, local: true do |f|%>
+          <%= fields_for @RoomUser do |r| %>
+            <%= r.hidden_field :user_id, value: @user.id %>
+          <% end %>
+          <%= f.submit "チャットを始める", class: "chat-btn" %>
         <% end %>
-        <%= f.submit "チャットを始める", class: "chat-btn" %>
       <% end %>
     <% end %>
-    <% end %>
+  </div>
   <%#//メッセージルームに遷移するボタン %>
 
-<%# ログインユーザーの投稿一覧 %>
-  <div class="contents">
-    <p class="contents-title"><%= @nickname %>さんの投稿</p>
-    <% @posts.each do |post| %>
-      <%= link_to post_path(post.id) do %>
-      <div class="post-content">
-        <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <P class="post-title"><%= post.title %></p>
-      </div>
-      <% end %>  
-    <% end %>
+  <%# ログインユーザーの投稿一覧 %>
+  <div class="show-contents">
+    <h2 class="show-contents-title"><%= @nickname %>さんの投稿</h2>
+    <%# 投稿一覧ページのcssを使用
+        posts/index.css %>
+    <ul class="post-lists">
+      <% @posts.each do |post| %>
+        <li class="list">
+          <%= link_to post_path(post.id) do %>
+            <div class="youtube_url">
+              <iframe class="video" src="https://www.youtube.com/embed/<%= post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="post-title">
+              <%= post.title %>
+            </div>
+          <% end %>
+          <div class="post-date">
+            <%= post.created_at.strftime("%Y-%m-%d %H:%M") %>
+          </div>
+          <div class="post-user">
+            <% if post.user.image.attached? %>
+              <%= image_tag post.user.image.variant(resize: '150x150'), class: 'user-image'  %>
+            <% else %>
+              <%= image_tag("user-image.png", class:"user-noicon") %>
+            <% end %>
+            <%=link_to post.user.nickname, user_path(post.user.id) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <%# //投稿一覧ページのcssを使用
+        posts/index.css %>
   </div>
-<%# //ログインしているユーザーがplayerだったら表示するように条件分岐 %>
-<%# //ログインユーザーの投稿一覧 %>
-
+  <%# //ログインユーザーの投稿一覧 %>
 </div>
 
 <%= render 'shared/footer' %>
