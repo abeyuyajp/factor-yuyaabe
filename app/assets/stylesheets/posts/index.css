@@ -33,7 +33,7 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-  padding: 0 12vw;
+  padding: 0 5vw;
 }
 
 .title {
@@ -53,24 +53,34 @@
 }
 
 .list {
-  width: 50vh;
+  width: 300px;
   background-color: #1d1e21;
-  margin: 15px;
-  padding: 20px;
+  margin: 6vh 20px;
+  padding: 20px 20px;
   border-radius: 20px;
 }
 
+.youtube_url {
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .video {
-  height: 33vh;
+  height: 200px;
   width: 100%;
   border-radius: 20px;
 }
 
 .post-title {
+  padding-top: 10px;
   font-size: 20px;
   font-weight: bold;
-  
   color: white;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;  
 }
 
 .list a {
@@ -80,12 +90,12 @@
 .post-date {
   color: hsla(0,0%,100%,.4);
   font-size: 12px;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid hsla(0,0%,100%,.4);
 }
 
 .post-user {
-  padding-top: 10px;
+  padding-top: 8px;
   display: flex;
   align-items: center;
 }
@@ -109,7 +119,4 @@
   margin-right: 5px;
 }
 
-.post-video {
-  width: 30vw;
-  height: 20vh;
-}
+
