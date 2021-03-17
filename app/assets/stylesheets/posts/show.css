@@ -1,6 +1,6 @@
 .show-post {
   background-color: black;
-  padding: 15vh 25vw;
+  padding: 10vh 15vw 20vh;
 }
 
 .show-area {
@@ -14,16 +14,19 @@
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  padding-bottom: 5vh;
+  padding-bottom: 10px;
   color: white;
 }
 
 .show-video-content {
-  padding: 3vh 0;
+  padding: 2vh 0;
+  height: 80vh;
 }
 
-.video {
+.show-video {
   margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 .show-post-text {

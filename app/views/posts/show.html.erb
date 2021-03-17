@@ -8,7 +8,7 @@
       <%= @post.title %>
     </h2>
     <div class="show-video-content">
-      <iframe class="video" src="https://www.youtube.com/embed/<%= @post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="show-video" src="https://www.youtube.com/embed/<%= @post.youtube_url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="show-post-text">
       <%= @post.text %>
