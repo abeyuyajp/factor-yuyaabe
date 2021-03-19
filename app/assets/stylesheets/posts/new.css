@@ -1,19 +1,19 @@
 
-.post-contents {
-  background-color: black;
-  padding-top: 80px;
-  color: white;
-}
-
 .post-main {
-  background-color: #242424;
-  width: 50%;
-  border-radius: 18px;
-  margin-bottom: 50vh;
-  margin: 0 auto;
+  background-color: black;
+  padding: 12vh 28vw 50vh;
 }
 
-.post-main-title {
+.post-form {
+  background-color: #242424;
+  color: white;
+  border-radius: 18px;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.post-form-title {
   color: hsla(0,0%,100%,.86);
   text-align: center;
   line-height: 100px;
@@ -22,15 +22,15 @@
   border-bottom: 1px solid hsla(0,0%,100%,.08);
 }
 
-.new-posts {
+.new-post {
   color: hsla(0,0%,100%,.86);
-  margin: 30px 20px;
+  padding: 10px 20px;
 }
 
-.new-posts-title {
-  margin-top: 30px;
-  margin-bottom: 5px;
+.new-post-title {
+  margin: 40px 5px 0;
   font-size: 15px;
+  font-weight: bold;
 }
 
 /*テキストボックス*/
@@ -44,39 +44,28 @@
   color: white;
 }
 
-
 .post-text#post-explain {
   padding-bottom: 80px;
 }
-
 /* /テキストボックス*/
 
 /* ボタン*/
-.actions {
+.new-post-action {
   width: 100%;
-  margin-bottom: 80px;
   text-align: center;
+  margin: 10vh 0;
 }
-
-.submit-btn {
-  width: 100%;
-  height: 50px;
-  margin: 50px 0;
+.new-post-btn {
+  padding: 15px 20px;
+  color: white;
   background-color: #ff3651;
-  color: white;
   border: 0;
   border-radius: 12px;
   font-weight: bold;
 }
 
-.back-btn {
-  padding: 15px 35%;
-  background-color: #aaa;
+.new-back-btn {
   color: white;
-  border: 0;
-  border-radius: 12px;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 /* /ボタン*/

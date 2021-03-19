@@ -1,7 +1,9 @@
 <%= render "shared/header" %>
 
+<%# cssはログインのものを使用
+ app/assets/stylesheets/user/login.css %>
 <div class="registration">
-  <div class="register-contents">
+  <div class="user-new-contents">
     <%= form_with model: @user, url: user_registration_path, class:"registration-main", local: true do |f| %>
 
     <div class="form-wrap">
@@ -38,8 +40,8 @@
         </div>
         <%= f.radio_button :position, :scouter, id:"position"%>
       </div>
-      <div class="actions">
-        <%= f.submit "登録する", class:"register-btn" %>
+      <div class="action">
+        <%= f.submit "登録する", class:"user-new-btn" %>
       </div>
     </div>
 

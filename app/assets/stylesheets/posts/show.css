@@ -1,23 +1,42 @@
-.post-show {
+.show-post {
   background-color: black;
-  color: white;
-  width: 100vw;
-  padding: 10vh 15vw;
+  padding: 10vh 15vw 20vh;
 }
 
-.post-area {
-  padding: 5vh 15vw;
+.show-area {
+  padding: 5vh 5vw;
   background-color: #1d1e21;
   border-radius: 20px;
   margin-bottom: 30vh;
 }
 
-.video {
-  margin-bottom: 5vh;
+.show-post-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10px;
+  color: white;
 }
 
-.post-text {
+.show-video-content {
+  padding: 2vh 0;
+  height: 80vh;
+}
+
+.show-video {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.show-post-text {
   margin-bottom: 5vh;
+  color: #a1a1a6;
+}
+
+.user-data {
+  margin: 10vh 0;
+  color: #a1a1a6;
 }
 
 .user-title {
@@ -31,6 +50,7 @@
   margin: 0 auto;
   line-height: 5vh;
   margin-bottom: 10vh;
+  font-weight: bold;
 }
 
 .user-header {

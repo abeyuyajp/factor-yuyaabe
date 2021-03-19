@@ -1,78 +1,86 @@
 
 .main {
   background-color: black;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .search {
   display: flex;
-  margin-left: 35%;
-  padding-top: 10vh;
+  justify-content: center;
+  padding: 10vh 30vw;
   height: 100%;
+  
 }
 
 .search-form {
-  line-height: 18px;
-  padding: 20px 16px;
+  padding: 11px 16px;
   border-radius: 8px;
   border: 0;
   color: hsla(0,0%,100%,.86);
-  background-color: #1d1e21;
-  margin-right: 5px;
+  background-color: #33343a;
+  width: 100%;
 }
 .search-btn {
   background: none;
   border: 0;
   color: gray;
+  padding-left: 5px;
 }
-
-
-
-
 
 /* 投稿一覧 */
 .post-contents {
   background-color: black;
   display: flex;
   flex-direction: column;
-  padding: 10vh 0;
+  padding: 0 5vw;
 }
 
 .title {
   padding-left: 15vw;
-  font-size: 3vh;
+  font-size: 20px;
   font-weight: bold;
-  padding-bottom: 50px;
+  color: white;
+  margin-bottom: 5vh;
 }
 
 .post-lists {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100%;
   list-style: none;
 }
 
 .list {
-  width: 50vh;
+  width: 300px;
   background-color: #1d1e21;
-  margin: 15px;
-  padding: 20px;
+  margin: 6vh 20px;
+  padding: 20px 20px;
   border-radius: 20px;
 }
 
+.youtube_url {
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .video {
-  height: 33vh;
+  height: 200px;
   width: 100%;
   border-radius: 20px;
 }
 
 .post-title {
+  padding-top: 10px;
   font-size: 20px;
   font-weight: bold;
-  padding-top: 15px;
   color: white;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;  
 }
 
 .list a {
@@ -82,12 +90,12 @@
 .post-date {
   color: hsla(0,0%,100%,.4);
   font-size: 12px;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid hsla(0,0%,100%,.4);
 }
 
 .post-user {
-  padding-top: 10px;
+  padding-top: 8px;
   display: flex;
   align-items: center;
 }
@@ -111,7 +119,4 @@
   margin-right: 5px;
 }
 
-.post-video {
-  width: 30vw;
-  height: 20vh;
-}
+
