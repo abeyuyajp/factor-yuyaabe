@@ -1,31 +1,13 @@
-.register-contents {
-  background-color: black;
+.registration {
   height: 100%;
-  padding: 80px 0;
-  color: white;
 }
-
-.form-wrap {
-  padding: 0 20px;
-}
-
-.register-btn {
-  width: 100%;
-  padding: 10px 0;
-  margin-bottom: 50px;
-  background-color: #ff3651;
-  border: 0;
-  border-radius: 12px;
-  color: white;
-  font-weight: bold;
-}
-
 .button-area {
   display: flex;
   align-items: center;
   color: white;
-  padding-left: 20px;
-  padding-bottom: 50px;
+  justify-content: center;
+  padding-bottom: 5vh;
+  width: 100%;
 }
 
 .button-area #position {

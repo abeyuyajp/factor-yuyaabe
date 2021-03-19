@@ -57,16 +57,20 @@
   border-radius: 12px;
 }
 
-.update-btn {
+.edit-action {
+  width: 100%;
+  margin: 10vh 0;
+  text-align: center;
+}
+.edit-btn {
   background-color: #ff3651;
   color: white;
-  margin-top: 10vh;
   padding: 11px 28px;
   border: 0;
   border-radius: 10px;
   font-weight: bold;
 }
 
-.update-back-btn {
+.edit-back-btn {
   color: white;
 }
