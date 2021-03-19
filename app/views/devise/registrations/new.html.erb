@@ -31,15 +31,16 @@
         <%= f.text_field :team, class: "input-area", id:"team", placeholder:"現所属チーム" %>
       </div>
       <div class="button-area">
-        <div class="form-text-wrap">
-          <label class="form-text">選手</label>
-        </div>
-        <%= f.radio_button :position, :player ,id:"position"%>
-        <div class="form-text-wrap">
-          <label class="form-text">チーム関係者</label>
-        </div>
-        <%= f.radio_button :position, :scouter, id:"position"%>
+        <label class="form-text">
+          <%= f.radio_button :position, :player ,id:"position"%>
+          選手
+        </label>
+        <label class="form-text">
+          <%= f.radio_button :position, :scouter, id:"position"%>
+          チーム関係者
+        </label>
       </div>
+
       <div class="action">
         <%= f.submit "登録する", class:"user-new-btn" %>
       </div>
