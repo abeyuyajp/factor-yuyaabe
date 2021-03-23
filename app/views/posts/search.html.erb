@@ -1,7 +1,3 @@
-
-<%# cssは投稿一覧ページのものを使用
- app/assets/stylesheets/posts/index.css %>
-
 <%= render "shared/header" %>
 
 <div class="search-main">
@@ -11,6 +7,9 @@
       <%= f.submit "検索", class: "search-btn"%>
     </div>
   <% end %>
+
+  <%# cssは投稿一覧ページのものを使用
+ app/assets/stylesheets/posts/index.css %>
   <div class="post-contents">
     <% if @results.length != 0 %>
       <ul class="post-lists">
@@ -39,9 +38,9 @@
         <% end %>
       </ul>
     <% else %>
-      <div class="result-empty">
-        <h1 class="result-empty-title">検索結果がありません</h1>
-        <p class="result-empty-message">検索結果がありませんでした。<br>
+      <div class="search-empty">
+        <h1 class="search-empty-title">検索結果がありません</h1>
+        <p class="search-empty-message">検索結果がありませんでした。<br>
         入力を間違えていないか確認してください。
       </div>
     <% end %>

@@ -3,13 +3,13 @@
   padding: 10vh 15vw 20vh;
 }
 
+/*投稿の詳細*/
 .show-area {
   padding: 5vh 5vw;
   background-color: #1d1e21;
   border-radius: 20px;
   margin-bottom: 30vh;
 }
-
 .show-post-title {
   font-size: 30px;
   font-weight: bold;
@@ -17,52 +17,48 @@
   padding-bottom: 10px;
   color: white;
 }
-
 .show-video-content {
   padding: 2vh 0;
   height: 80vh;
 }
-
 .show-video {
   margin: 0 auto;
   height: 100%;
   width: 100%;
 }
-
 .show-post-text {
   margin-bottom: 5vh;
   color: #a1a1a6;
 }
+/*// 投稿の詳細*/
 
+/*ユーザー情報の詳細*/
 .user-data {
   margin: 10vh 0;
   color: #a1a1a6;
 }
-
 .user-title {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 5vh;
 }
-
 .user-table {
   margin: 0 auto;
   line-height: 5vh;
   margin-bottom: 10vh;
   font-weight: bold;
 }
-
 .user-header {
   padding-right: 10vw;
   font-weight: bold;
 }
+/*//ユーザー情報の詳細*/
 
 .action-btn {
   width: 100%;
   display: flex;
 }
-
 .edit-btn {
   margin: 0 auto;
   padding: 11px 25px;
@@ -72,7 +68,6 @@
   font-weight: bold;
   text-decoration: none;
 }
-
 .delete-btn {
   margin: 0 auto;
   padding: 11px 25px;

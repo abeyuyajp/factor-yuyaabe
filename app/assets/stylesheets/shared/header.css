@@ -20,11 +20,9 @@
   padding: 6px;
 }
 
-.factor-icon {
+.header-logo {
   width: 8vw;
 }
-
-/* ナビゲーションバー*/
 
 .menu {
   font-size: 15px;
@@ -82,7 +80,7 @@
 }
 
 
-.user_info span {
+.logout_nav span {
   color: white;
   margin: 0 10px;
 }
