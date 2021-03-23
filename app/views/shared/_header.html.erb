@@ -1,31 +1,32 @@
 <header class="header">
   <div class="header-contents">
     <%= link_to "投稿する", new_post_path, class: "post-btn" %></li>
-    <%= link_to image_tag("header-logo.png", class:"factor-icon"), "/" %>
+    <%= link_to image_tag("header-logo.png", class:"header-logo"), "/" %>
     <div class="menu">
-        <% if user_signed_in? %>
-          <% if current_user.image.attached? %>
-            <%= image_tag current_user.image.variant(resize: '150x150'), class: 'user-image' %>
-          <% else %>
-            <%= image_tag("user-image.png", class:"user-noicon") %>
-          <% end %>
-          <div class="user_nav">
-            <span><%= current_user.nickname %>
-              <ul class="user_info">
-                <li>
-                  <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                  <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </span>
-          </div>
+      <% if user_signed_in? %>
+        <% if current_user.image.attached? %>
+          <%= image_tag current_user.image.variant(resize: '150x150'), class: 'user-image' %>
         <% else %>
           <%= image_tag("user-image.png", class:"user-noicon") %>
+        <% end %>
+        <div class="user_nav">
+          <span><%= current_user.nickname %>
+            <ul class="user_info">
+              <li>
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+        </div>
+      <% else %>
+        <%= image_tag("user-image.png", class:"user-noicon") %>
+        <div class="logout_nav">
           <%= link_to "ログイン", new_user_session_path, class: "login-btn" %>
           <span>/</span>
           <%= link_to "新規登録", new_user_registration_path, class: "sign-up-btn"  %>
-        <% end %>
-      
+        </div>
+      <% end %>
     </div>
   </div>
 </header>
