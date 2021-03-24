@@ -20,6 +20,14 @@
 # ターゲット
 プロスポーツ選手を目指す高校生や大学生、実業団などで活動する社会人
 
+# デプロイ後のURL
+https://factor-yuyaabe.herokuapp.com/
+
+# テスト用アカウント
+- nickname : test
+- email    : test@example
+- password : test0618
+
 # DEMO
 ## トップ画面
 ![index](https://user-images.githubusercontent.com/76641435/112250696-3280fb80-8c9d-11eb-8b6e-06beb784f913.png)
@@ -57,6 +65,14 @@
    ※動画公開側の設定によっては、動画を読み込めなくなる場合がございます。
 3. アピールポイントや説明を入力します。
 4. 「投稿する」ボタンを押すと、トップページに追加されます。
+
+# 使用言語・技術
+- Ruby
+- Ruby on Rails
+- HTML/CSS
+- AWS(S3)
+- SQL
+
 
 # 実装予定の機能
 - メッセージ通知機能
