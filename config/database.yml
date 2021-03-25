@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: factor_yuyaabe_production
-  username: factor_yuyaabe
-  password: <%= ENV['FACTOR_YUYAABE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
