@@ -10,7 +10,6 @@
   justify-content: center;
   padding: 10vh 30vw;
   height: 100%;
-  
 }
 
 .search-form {
@@ -119,4 +118,35 @@
   margin-right: 5px;
 }
 
+/*タブレット表示*/
+@media (max-width: 1024px) {
+  .search {
+    padding: 10vh 10vw;
+  }
+  .search-form {
+    padding: 8px 16px;
+  }
+  .post-contents {
+    width: 100%;
+  }
+  .list {
+    margin: 10px;
+  }
+}
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .search {
+    padding: 10vh 10vw;
+  }
+  .search-form {
+    padding: 8px 16px;
+  }
+  .post-contents {
+    width: 100%;
+  }
+  .list {
+    margin: 10px;
+  }
+}
 
