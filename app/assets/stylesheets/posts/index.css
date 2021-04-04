@@ -121,10 +121,14 @@
 /*タブレット表示*/
 @media (max-width: 1024px) {
   .search {
-    padding: 10vh 10vw;
+    padding: 5vh 10vw;
   }
   .search-form {
     padding: 8px 16px;
+  }
+  .title {
+    padding-left: 10vw;
+    margin-bottom: 5px;
   }
   .post-contents {
     width: 100%;
@@ -137,10 +141,14 @@
 /*スマホ表示時*/
 @media (max-width: 599px) {
   .search {
-    padding: 10vh 10vw;
+    padding: 5vh 10vw;
   }
   .search-form {
     padding: 8px 16px;
+  }
+  .title {
+    padding-left: 20px;
+    margin-bottom: 5px;
   }
   .post-contents {
     width: 100%;
