@@ -47,7 +47,6 @@
 .post-text#post-explain {
   padding-bottom: 80px;
 }
-/* /テキストボックス*/
 
 /* ボタン*/
 .new-post-action {
@@ -63,12 +62,21 @@
   border-radius: 12px;
   font-weight: bold;
 }
-
 .new-back-btn {
   color: white;
 }
 
-/* /ボタン*/
+/*タブレット表示時*/
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .post-main {
+    padding: 12vh 5vw 50vh;
+  }
+  .new-post-action {
+    margin: 5vh 0;
+  }
+}
 
 
 
