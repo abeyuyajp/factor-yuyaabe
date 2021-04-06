@@ -25,3 +25,10 @@
   margin: 0 30px;
   list-style: none;
 }
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .footer-menu {
+    margin: 0 5vw;
+  }
+}
