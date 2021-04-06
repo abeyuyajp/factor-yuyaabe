@@ -57,5 +57,30 @@
   border: 0;
   border-radius: 12px;
   font-weight: bold;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+}
+.sign-up-btn {
+  display: block;
+  padding-bottom: 10vh;
+}
+
+/*タブレット表示時*/
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .user-new-contents {
+    padding: 10vh 5vw;
+  }
+  .form-header {
+    height: 80px;
+  }
+  .form-title {
+    line-height: 70px;
+  }
+  .user-new-btn {
+    margin-bottom: 5vh;
+  }
+  .sign-up-btn {
+    padding-bottom: 5vh;
+  }
 }

@@ -74,3 +74,10 @@
 .edit-back-btn {
   color: white;
 }
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .edit-form {
+    width: 90%;
+  }
+}

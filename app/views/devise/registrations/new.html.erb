@@ -31,13 +31,13 @@
         <%= f.text_field :team, class: "input-area", id:"team", placeholder:"現所属チーム" %>
       </div>
       <div class="button-area">
-        <label class="form-text">
-          <%= f.radio_button :position, :player ,id:"position"%>
+        <label class="form-player">
           選手
+          <%= f.radio_button :position, :player ,id:"position"%>
         </label>
-        <label class="form-text">
-          <%= f.radio_button :position, :scouter, id:"position"%>
+        <label class="form-scouter">
           チーム関係者
+          <%= f.radio_button :position, :scouter, id:"position"%>
         </label>
       </div>
 

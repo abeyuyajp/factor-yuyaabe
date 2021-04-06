@@ -77,3 +77,26 @@
   font-weight: bold;
   text-decoration: none;
 }
+
+/*タブレット表示時*/
+@media  (max-width: 1024px) {
+  .show-post {
+    padding: 10vh 0 20vh;
+  }
+  .show-video-content {
+    height: 50vh;
+  }
+}
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .show-post {
+    padding: 10vh 0 20vh;
+  }
+  .show-video-content {
+    height: 35vh;
+  }
+  .show-post-text {
+    margin-bottom: 10px;
+  }
+}

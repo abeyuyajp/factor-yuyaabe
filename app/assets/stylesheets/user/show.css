@@ -25,7 +25,6 @@
 .user-show-calumn {
   font-size: 18px;
 }
-/*//ユーザーの詳細情報*/
 
 /*チャットルームに遷移するボタン*/
 .show-chat-btn {
@@ -44,7 +43,6 @@
   color: white;
   font-weight: bold;
 }
-/*//チャットルームにボタン*/
 
 /*編集ページに遷移するボタン*/
 .edit-user-btn {
@@ -63,7 +61,6 @@
   color: white;
   font-weight: bold;
 }
-/*//編集ページに遷移するボタン*/
 
 /*ユーザーの投稿一覧表示部分*/
 .show-contents {
@@ -74,4 +71,19 @@
   font-weight: bold;
   font-size: 25px ;
 }
-/*//ユーザーの投稿一覧表示部分*/
+
+
+/*タブレット表示時*/
+@media (max-width: 1024px) {
+    
+}
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .user-show-data {
+    padding: 10vh 5vw;
+  }
+  .show-contents {
+    padding: 20vh 10vw;
+  }
+}

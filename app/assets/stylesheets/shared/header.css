@@ -45,7 +45,7 @@
   color: white;
   display: block;
   float: left;
-  width: 150px;
+  width: 10vw;
   cursor: pointer;
   position: relative;
 }
@@ -64,7 +64,7 @@
 .user_nav ul{
   display: none;
   position: absolute;
-  width: 180px;
+  width: 120px;
   background-color: #1d1e21;
   padding-left: 0;
   text-decoration: none;
@@ -93,4 +93,55 @@
 .sign-up-btn {
   text-decoration: none;
   color: white;
+}
+
+/*スマホ表示時*/
+@media (max-width: 599px) {
+  .header {
+    padding: 0 10px;
+  }
+  .header-logo {
+    width: 20vw;
+  }
+  .user_nav {
+    position: relative;
+  }
+  .user_nav span {
+    color: white;
+    display: block;
+    float: left;
+    width: 10vw;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .user_nav span:after {
+    content: '▼';
+    font-size: .7em;
+    margin-left: -4px;
+  }
+  
+  .user_nav span:hover ul {
+    color: #57C3E9;
+    display: block;
+  }
+  
+  .user_nav ul{
+    display: none;
+    position: absolute;
+    width: 120px;
+    background-color: #1d1e21;
+    padding-left: 0;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .user_nav li a {
+    display: block;
+    padding: 10px 20px;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+  }
+  
 }
