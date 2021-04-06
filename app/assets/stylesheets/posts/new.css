@@ -67,6 +67,14 @@
 }
 
 /*タブレット表示時*/
+@media (max-width: 1024px) {
+  .post-main {
+    padding: 12vh 20vw 50vh;
+  }
+  .new-post-action {
+    margin: 5vh 0;
+  }
+}
 
 /*スマホ表示時*/
 @media (max-width: 599px) {
